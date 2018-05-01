@@ -5,6 +5,12 @@ Coordinate::Coordinate(int x, int y){
     this->y = y;
 }
 
+Coordinate& Coordinate::operator= (const Coordinate& c){
+  this->x = c.getX();
+  this->y = c.getY();
+  return *this;
+}
+
 int Coordinate::getX() const{
     return this->x;
 }
