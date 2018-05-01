@@ -4,6 +4,7 @@ class Coordinate{
     
     public:
         Coordinate(int x, int y);
+        Coordinate& operator= (const Coordinate& c);
         int getX() const;
         int getY() const;
         ~Coordinate();

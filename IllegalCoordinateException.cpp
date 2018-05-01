@@ -1,16 +1,18 @@
 #include <exception>
 #include <string>
+#include "Coordinate.h"
 
-class IllegalCoordinateException:public exception{
+using namespace std;
+
+class IllegalCoordinateException {
   private:
-    Coordinate c;
+    const Coordinate& c;
     
   public:
-      IllegalCoordinateException(const Coordinate& c){
-          this->c = c;
-      }
+      IllegalCoordinateException(const Coordinate& c): c(c) { }
       
-      virtual string theCoordinate(){
-          return string("Illegal coordinate: " + to_string(c.getX()) + "," + to_string(c.getY()));
+      string theCoordinate() const{
+          // return string("Illegal coordinate: " + to_string(c.getX()) + "," + to_string(c.getY()));
+          return string(to_string(c.getX()) + "," + to_string(c.getY()));
       }  
 };

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "DerivedChar.h"
 #include "IllegalCoordinateException.cpp"
 
@@ -9,7 +8,7 @@ class Board{
     
     public:
         Board(int size);
-        void operator= (const DerivedChar& dc);
+        DerivedChar& operator= (const DerivedChar& dc);
         DerivedChar& operator[] (const Coordinate& c) const;
         friend ostream& operator<< (ostream& os, const Board& b);
         ~Board();
