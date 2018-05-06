@@ -9,8 +9,12 @@ class DerivedChar{
         char c;
         
     public:
+        DerivedChar();
         DerivedChar(char c);
+        DerivedChar(const DerivedChar& dc);
         DerivedChar& operator= (const char c);
-        void operator= (const DerivedChar& dc);
+        DerivedChar& operator= (const DerivedChar& dc);
         friend ostream& operator<< (ostream& os, const DerivedChar& dc);
+        
+        operator char() const;
 };
