@@ -11,6 +11,7 @@ DerivedChar::DerivedChar(const DerivedChar& dc) {
 }
 
 DerivedChar& DerivedChar::operator= (const char c){
+    
     switch (c){
         case Symbol::X:
             this->c = c;
@@ -38,6 +39,27 @@ ostream& operator<< (ostream& os, const DerivedChar& dc){
     return os << dc.c;
 }
 
-DerivedChar::operator char() const{
-    return c;
+DerivedChar::operator Symbol() const{
+    switch (c){
+        case Symbol::X:
+            return Symbol::X;
+            break;
+        case Symbol::O:
+            return Symbol::O;
+            break;
+        case Symbol::P:
+            return Symbol::P;
+            break;
+        default:
+            throw IllegalCharException(c);
+            break;
+    }
 }
+
+// bool DerivedChar::operator ==(const char c) const{
+//     return this->c == c;
+// }
+
+// DerivedChar::operator char() const{
+//     return c;
+// }

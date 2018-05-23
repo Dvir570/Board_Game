@@ -1,11 +1,13 @@
+#pragma once
+
 class Coordinate{
     private:
-        int x, y;  
+        unsigned int x, y;  
     
     public:
-        Coordinate(int x, int y);
+        Coordinate(unsigned int x, unsigned int y);
         Coordinate& operator= (const Coordinate& c);
-        int getX() const;
-        int getY() const;
+        unsigned int getX() const;
+        unsigned int getY() const;
         ~Coordinate();
 };
